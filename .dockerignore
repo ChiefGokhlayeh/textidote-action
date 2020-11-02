@@ -5,3 +5,4 @@
 /.vscode*
 /action.yml
 /Pipfile*
+/test*

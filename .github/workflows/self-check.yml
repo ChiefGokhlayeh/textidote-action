@@ -1,0 +1,13 @@
+name: Self-check GitHub Action
+on: [push, pull_request]
+jobs:
+    self-check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set up Git repository
+              uses: actions/checkout@v2
+            - name: Lint fine.tex
+              uses: ./
+              with:
+                  root_file: fine.tex
+                  working_directory: test/

@@ -14,6 +14,9 @@ inputs:
     report_file:
         description: The file path of TeXtidote report.
         default: 'report.html'
+    threshold_error:
+        description: The threshold for the number of warnings from TeXtidote above which the build is marked unstable.
+        required: false
     args:
         description: Extra arguments to be passed to TeXtidote.
         required: false
@@ -25,6 +28,7 @@ runs:
         - ${{ inputs.working_directory }}
         - ${{ inputs.report_type }}
         - ${{ inputs.report_file }}
+        - ${{ inputs.threshold_error }}
         - ${{ inputs.args }}
 branding:
     icon: type

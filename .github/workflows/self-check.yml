@@ -11,3 +11,14 @@ jobs:
               with:
                   root_file: fine.tex
                   working_directory: test/
+            - name: Lint bad.tex with no threshold set
+              uses: ./
+              with:
+                  root_file: bad.tex
+                  working_directory: test/
+            - name: Lint bad.tex with threshold set to known warnings
+              uses: ./
+              with:
+                  root_file: bad.tex
+                  working_directory: test/
+                  threshold_error: 21

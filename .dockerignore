@@ -1,0 +1,7 @@
+/.git*
+/.markdownlint.json
+/.pre-commit-config.yaml
+/.prettierrc.json
+/.vscode*
+/action.yml
+/Pipfile*

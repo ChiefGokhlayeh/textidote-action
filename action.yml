@@ -1,0 +1,31 @@
+name: TeXtidote Action
+description: GitHub Action to lint, spell- and grammar-check LaTeX documents using TeXtidote
+author: Andreas Baulig
+inputs:
+    root_file:
+        description: The root LaTeX file to be linted
+        required: true
+    working_directory:
+        description: The working directory for the LaTeX engine
+        required: false
+    report_type:
+        description: The type of TeXtidote report to generate (referring to TeXtidote's --output option)
+        default: 'html'
+    report_file:
+        description: The file path of TeXtidote report
+        default: 'report.html'
+    args:
+        description: Extra arguments to be passed to TeXtidote
+        required: false
+runs:
+    using: docker
+    image: Dockerfile
+    args:
+        - ${{ inputs.root_file }}
+        - ${{ inputs.working_directory }}
+        - ${{ inputs.report_type }}
+        - ${{ inputs.report_file }}
+        - ${{ inputs.args }}
+branding:
+    icon: type
+    color: blue

@@ -26,7 +26,12 @@ fi
 
 set +e
 
-/usr/local/bin/textidote --output "$report_type" "${args[@]}" "$root_file" > "$report_file"
+cmd="/usr/local/bin/textidote --output $report_type ${args[*]} $root_file"
+if [[ -z "$report_file" ]]; then
+  eval "${cmd[@]}"
+else
+  eval "${cmd[@]}" > "$report_file"
+fi
 textidote_exit="$?"
 
 echo "Linter counted $textidote_exit warnings."

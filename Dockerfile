@@ -3,7 +3,7 @@ FROM alpine:3.12
 LABEL name="textidote-action"
 LABEL summary="TeXtidote LaTeX linter, spell- and grammar checker"
 LABEL description="Part of GitHub Action textidote-action, used to lint, spell- and grammar-check LaTeX documents using TeXtidote."
-LABEL version="v1.1"
+LABEL version="v1.2"
 LABEL url="https://github.com/ChiefGokhlayeh/textidote-action"
 LABEL vcs-type="git"
 
@@ -14,6 +14,7 @@ ARG TEXTIDOTE_VERSION=v0.8.1
 RUN apk add --no-cache \
     bash \
     curl \
+    hunspell \
     openjdk11-jre \
     \
     && mkdir -p /usr/local/share/java/textidote \

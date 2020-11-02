@@ -1,4 +1,4 @@
-# TeXtidote Action ![pre-commit](https://github.com/ChiefGokhlayeh/textidote-action/workflows/pre-commit/badge.svg) ![self-check](https://github.com/ChiefGokhlayeh/textidote-action/workflows/Self-check%20GitHub%20Action/badge.svg)
+# TeXtidote Action [![pre-commit](https://github.com/ChiefGokhlayeh/textidote-action/workflows/pre-commit/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Apre-commit) [![self-check](https://github.com/ChiefGokhlayeh/textidote-action/workflows/self-check/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Aself-check)
 
 GitHub Action to lint, spell- and grammar-check LaTeX documents using [TeXtidote](https://github.com/sylvainhalle/textidote).
 

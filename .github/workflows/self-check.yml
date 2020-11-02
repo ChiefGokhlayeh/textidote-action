@@ -1,5 +1,11 @@
-name: Self-check GitHub Action
-on: [push, pull_request]
+name: self-check
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
 jobs:
     self-check:
         runs-on: ubuntu-latest

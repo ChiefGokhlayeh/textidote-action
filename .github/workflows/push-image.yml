@@ -37,3 +37,12 @@ jobs:
                   tags: ${{ secrets.DOCKERHUB_USERNAME }}/textidote:${{steps.vars.outputs.tag}}
             - name: Image digest
               run: echo ${{ steps.docker_build.outputs.digest }}
+            - name: Checkout Git repository
+              uses: actions/checkout@v2
+            - name: Update Docker Hub description
+              uses: peter-evans/dockerhub-description@v2
+              with:
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_PASSWORD }}
+                  repository: gokhlayeh/textidote
+                  readme-filepath: doc/docker/README.md

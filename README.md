@@ -1,4 +1,4 @@
-# TeXtidote Action [![pre-commit](https://github.com/ChiefGokhlayeh/textidote-action/workflows/pre-commit/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Apre-commit) [![self-check](https://github.com/ChiefGokhlayeh/textidote-action/workflows/self-check/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Aself-check)
+# TeXtidote Action [![pre-commit](https://github.com/ChiefGokhlayeh/textidote-action/workflows/pre-commit/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Apre-commit) [![self-check](https://github.com/ChiefGokhlayeh/textidote-action/workflows/self-check/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Aself-check) [![push-image](https://github.com/ChiefGokhlayeh/textidote-action/workflows/push-image/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Apush-image)
 
 GitHub Action to lint, spell- and grammar-check LaTeX documents using [TeXtidote](https://github.com/sylvainhalle/textidote).
 
@@ -62,6 +62,10 @@ The provided Docker image is set up with [`hunspell`](https://github.com/hunspel
 ### More Options
 
 Please refer to the official [TeXtidote readme](https://github.com/sylvainhalle/textidote/blob/master/Readme.md) for more options. Use [`args`](#args) to add custom options.
+
+## Docker Hub
+
+The Docker image created for this action is reusable as a general TeXtidote container and is available on [Docker Hub](https://hub.docker.com/r/gokhlayeh/textidote).
 
 ## Contributing
 

@@ -28,3 +28,17 @@ jobs:
                   root_file: bad.tex
                   working_directory: test/
                   threshold_error: 21
+            - name: Lint and spell-check fine.tex
+              uses: ./
+              with:
+                  root_file: fine.tex
+                  working_directory: test/
+                  args: --check en
+                  threshold_error: 1 # by default the word 'linter' will be unknown
+            - name: Lint and spell-check fine.tex
+              uses: ./
+              with:
+                  root_file: fine.tex
+                  working_directory: test/
+                  args: --check en --dict en.dict
+                  threshold_error: 0

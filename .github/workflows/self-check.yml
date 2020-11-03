@@ -17,6 +17,7 @@ jobs:
               with:
                   root_file: fine.tex
                   working_directory: test/
+                  threshold_error: 0
             - name: Lint bad.tex with no threshold set
               uses: ./
               with:

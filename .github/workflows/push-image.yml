@@ -3,6 +3,8 @@ name: push-image
 on:
     push:
         branches: main
+    release:
+        types: [published, created, edited, prereleased]
 
 jobs:
     main:
@@ -17,11 +19,21 @@ jobs:
               with:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
                   password: ${{ secrets.DOCKERHUB_TOKEN }}
-            - name: Build and push
+            - name: Build and push latest
               id: docker_build
               uses: docker/build-push-action@v2
               with:
                   push: true
                   tags: ${{ secrets.DOCKERHUB_USERNAME }}/textidote:latest
+            - name: Determine release tag name
+              if: ${{ github.event_name == 'release' }}
+              id: vars
+              run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+            - name: Build and push release
+              if: ${{ github.event_name == 'release' }}
+              uses: docker/build-push-action@v2
+              with:
+                  push: true
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/textidote:${{steps.vars.outputs.tag}}
             - name: Image digest
               run: echo ${{ steps.docker_build.outputs.digest }}

@@ -24,6 +24,12 @@ GitHub Action to lint, spell- and grammar-check LaTeX documents using [TeXtidote
 
 **Optional** - Extra arguments to be passed to TeXtidote.
 
+## Outputs
+
+### `num_warnings`
+
+Integer value representing the number of warnings TeXtidote found while linting the document. Value is parsed from TeXtidote `stderr`. If parsing fails, [`num_warnings`](#num_warnings) is set to `-1` and an error is logged.
+
 ## Example usage
 
 ```yaml

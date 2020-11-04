@@ -36,7 +36,7 @@ jobs:
             - name: Set up Git repository
               uses: actions/checkout@v2
             - name: Lint LaTeX document
-              uses: ChiefGokhlayeh/textidote-action@v2
+              uses: ChiefGokhlayeh/textidote-action@v3
               with:
                   root_file: main.tex
 

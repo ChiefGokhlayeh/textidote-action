@@ -20,7 +20,7 @@ docker run -it -v '/path/to/workspace:/textidote' gokhlayeh/textidote ROOT_FILE 
 
 ### `REPORT_TYPE`
 
-**Required** - The type of TeXtidote report to generate (referring to TeXtidote's --output option). Example: `singleline`, `html`
+**Optional** - The type of TeXtidote report to generate (referring to TeXtidote's --output option). Example: `singleline`, `html`
 
 ### `REPORT_FILE`
 
@@ -28,7 +28,7 @@ docker run -it -v '/path/to/workspace:/textidote' gokhlayeh/textidote ROOT_FILE 
 
 ### `THRESHOLD_ERROR`
 
-**Optional** - The threshold for the number of warnings from TeXtidote above which exit code is not masked.
+**Optional** - The threshold for the number of warnings from TeXtidote above which non-zero exit code is returned.
 
 ### `ARGS`
 
@@ -51,7 +51,7 @@ docker run -it --rm -v "$(pwd)/doc:/doc" gokhlayeh/textidote "main.tex" "/doc" h
 Use English (`en`) spell-checker.
 
 ```sh
-docker run -it --rm -v "$(pwd)/doc:/doc" gokhlayeh/textidote "main.tex" "/doc" singleline '' '' '--check en'
+docker run -it --rm -v "$(pwd)/doc:/doc" gokhlayeh/textidote "main.tex" "/doc" '' '' '' '--check en'
 ```
 
 ## Tips & Tricks

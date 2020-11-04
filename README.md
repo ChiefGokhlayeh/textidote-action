@@ -57,7 +57,7 @@ jobs:
 
 ### Spell Check
 
-The provided Docker image is set up with [`hunspell`](https://github.com/hunspell/hunspell) installed, enabling spell-checking through TeXtidote. To activate it for CI build, set add option `--check <language>` to [`args`](#args), where `<language>` is any language code supported by `hunspell` (examples: `en` - English, `de` - German, `es` - Spanish). Custom dictionaries can be added via option `--dict <path-to-dict-file-in-repo>`.
+TeXtidote is able to perform spell- and grammar-checking using [Language Tool](https://languagetool.org/). To activate it for CI build, set add option `--check <language>` to [`args`](#args), where `<language>` is any language code supported by Language Tool (examples: `en` - English, `de` - German, `es` - Spanish). Custom dictionaries can be added via option `--dict <path-to-dict-file-in-repo>`.
 
 ### More Options
 

@@ -3,7 +3,7 @@ FROM debian:buster
 LABEL name="textidote-action"
 LABEL summary="TeXtidote LaTeX linter, spell- and grammar checker"
 LABEL description="Part of GitHub Action textidote-action, used to lint, spell- and grammar-check LaTeX documents using TeXtidote."
-LABEL version="v2.2"
+LABEL version="v2.3"
 LABEL url="https://github.com/ChiefGokhlayeh/textidote-action"
 LABEL vcs-type="git"
 
@@ -14,7 +14,6 @@ ARG TEXTIDOTE_VERSION=v0.8.1
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --no-install-recommends \
     bash \
     curl \
-    hunspell \
     openjdk-11-jre \
     \
     && mkdir -p /usr/local/share/java/textidote \

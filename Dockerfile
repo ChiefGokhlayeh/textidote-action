@@ -3,7 +3,7 @@ FROM debian:buster
 LABEL name="textidote-action"
 LABEL summary="TeXtidote LaTeX linter, spell- and grammar checker"
 LABEL description="Part of GitHub Action textidote-action, used to lint, spell- and grammar-check LaTeX documents using TeXtidote."
-LABEL version="v2.3"
+LABEL version="v3.0"
 LABEL url="https://github.com/ChiefGokhlayeh/textidote-action"
 LABEL vcs-type="git"
 

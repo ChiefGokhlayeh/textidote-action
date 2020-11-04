@@ -20,6 +20,9 @@ inputs:
     args:
         description: Extra arguments to be passed to TeXtidote.
         required: false
+outputs:
+    num_warnings:
+        description: The number of warnings returned by TeXtidote.
 runs:
     using: docker
     image: Dockerfile

@@ -3,7 +3,16 @@ name: self-check
 on: [push, pull_request]
 
 jobs:
-    self-check:
+    pre-commit:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set up Git repository
+              uses: actions/checkout@v2
+            - name: Set up Python environment
+              uses: actions/setup-python@v2
+            - name: Run pre-commit checks
+              uses: pre-commit/action@v2.0.0
+    verify-textidote:
         runs-on: ubuntu-latest
         steps:
             - name: Set up Git repository

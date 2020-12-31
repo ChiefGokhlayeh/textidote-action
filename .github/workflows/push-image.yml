@@ -24,13 +24,26 @@ jobs:
               with:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
                   password: ${{ secrets.DOCKERHUB_TOKEN }}
+            - name: Cache Docker layers
+              uses: actions/cache@v2
+              env:
+                  cache-name: docker-cache
+              with:
+                  path: /tmp/.buildx-cache
+                  key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./docker/Dockerfile') }}
+                  restore-keys: |
+                      ${{ runner.os }}-build-${{ env.cache-name }}-
+                      ${{ runner.os }}-build-
+                      ${{ runner.os }}-
             - name: Build and push latest
               id: docker_build
               uses: docker/build-push-action@v2
               with:
+                  cache-from: type=local,src=/tmp/.buildx-cache
+                  cache-to: type=local,dest=/tmp/.buildx-cache
+                  platforms: ${{ env.buildx_platforms }}
                   push: true
                   tags: ${{ secrets.DOCKERHUB_USERNAME }}/textidote:latest
-                  platforms: ${{ env.buildx_platforms }}
             - name: Determine release tag name
               if: ${{ github.event_name == 'release' }}
               id: vars
@@ -39,9 +52,11 @@ jobs:
               if: ${{ github.event_name == 'release' }}
               uses: docker/build-push-action@v2
               with:
+                  cache-from: type=local,src=/tmp/.buildx-cache
+                  cache-to: type=local,dest=/tmp/.buildx-cache
+                  platforms: ${{ env.buildx_platforms }}
                   push: true
                   tags: ${{ secrets.DOCKERHUB_USERNAME }}/textidote:${{steps.vars.outputs.tag}}
-                  platforms: ${{ env.buildx_platforms }}
             - name: Image digest
               run: echo ${{ steps.docker_build.outputs.digest }}
             - name: Checkout Git repository

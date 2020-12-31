@@ -4,5 +4,4 @@
 /.prettierrc.json
 /.vscode*
 /action.yml
-/Pipfile*
 /test*

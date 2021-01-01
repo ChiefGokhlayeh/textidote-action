@@ -75,7 +75,7 @@ The Docker image created for this action is reusable as a general TeXtidote cont
 
 ## Contributing
 
-Please raise an issue if you encounter any issues related to this action. Pull requests are always welcome.
+Please raise an issue if you encounter any troubles related to this action. Pull requests are always welcome. This is a hobby project afterall.
 
 Contributors in alphabetical order:
 

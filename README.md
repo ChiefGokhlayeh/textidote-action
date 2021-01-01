@@ -63,7 +63,27 @@ jobs:
 
 ### Spell Check
 
-TeXtidote is able to perform spell- and grammar-checking using [Language Tool](https://languagetool.org/). To activate it for CI build, set add option `--check <language>` to [`args`](#args), where `<language>` is any language code supported by Language Tool (examples: `en` - English, `de` - German, `es` - Spanish). Custom dictionaries can be added via option `--dict <path-to-dict-file-in-repo>`.
+TeXtidote is able to perform spell- and grammar-checking using [Language Tool](https://languagetool.org/). To activate it for CI build, add option `--check <language>` to [`args`](#args), where `<language>` is any language code supported by Language Tool (examples: `en` - English, `de` - German, `es` - Spanish). Custom dictionaries can be added via option `--dict <path-to-dict-file-in-repo>`.
+
+<details><summary>Example: Using English spell check & dictionary</summary>
+<p>
+
+```yaml
+name: Lint & Spell Check LaTeX document
+on: [push]
+jobs:
+    lint_and_spell_check_latex:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: ChiefGokhlayeh/textidote-action@v3
+              with:
+                  root_file: main.tex
+                  args: --check en --dict en_US.dict
+```
+
+</p>
+</details>
 
 ### More Options
 

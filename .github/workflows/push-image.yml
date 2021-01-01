@@ -10,7 +10,7 @@ jobs:
     main:
         runs-on: ubuntu-latest
         env:
-            buildx_platforms: linux/386,linux/amd64,linux/arm64 # exclude: linux/arm/v6,linux/arm/v7, buggy on debian:buster (bugs.debian.org #923479)
+            buildx_platforms: linux/386,linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
         steps:
             - name: Set up QEMU
               id: qemu

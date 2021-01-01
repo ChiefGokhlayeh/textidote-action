@@ -42,7 +42,7 @@ jobs:
             - name: Set up Git repository
               uses: actions/checkout@v2
             - name: Lint LaTeX document
-              uses: ChiefGokhlayeh/textidote-action@v3
+              uses: ChiefGokhlayeh/textidote-action@v4
               with:
                   root_file: main.tex
 
@@ -76,7 +76,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: ChiefGokhlayeh/textidote-action@v3
+            - uses: ChiefGokhlayeh/textidote-action@v4
               with:
                   root_file: main.tex
                   args: --check en --dict en_US.dict

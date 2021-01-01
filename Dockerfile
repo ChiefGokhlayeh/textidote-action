@@ -1,9 +1,9 @@
-FROM debian:buster
+FROM alpine:edge
 
 LABEL name="textidote-action"
 LABEL summary="TeXtidote LaTeX linter, spell- and grammar checker"
 LABEL description="Part of GitHub Action textidote-action, used to lint, spell- and grammar-check LaTeX documents using TeXtidote."
-LABEL version="v3.0"
+LABEL version="v4.0"
 LABEL url="https://github.com/ChiefGokhlayeh/textidote-action"
 LABEL vcs-type="git"
 
@@ -11,20 +11,15 @@ ARG TEXTIDOTE_MAINTAINER=sylvainhalle
 ARG TEXTIDOTE_REPO=textidote
 ARG TEXTIDOTE_VERSION=v0.8.1
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --no-install-recommends \
+RUN apk add --no-cache \
     bash \
     curl \
-    openjdk-11-jre \
-    \
+    grep \
+    openjdk8-jre \
     && mkdir -p /usr/local/share/java/textidote \
-    \
     && curl -fsSL -o /usr/local/share/java/textidote/textidote.jar "https://github.com/${TEXTIDOTE_MAINTAINER}/${TEXTIDOTE_REPO}/releases/download/${TEXTIDOTE_VERSION}/textidote.jar" \
-    \
-    && apt-get remove --purge -y curl \
-    && apt-get autoremove -y \
-    \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
+    && apk del --no-cache \
+        curl
 
 COPY textidote /usr/local/bin/textidote
 COPY entrypoint.sh /entrypoint.sh

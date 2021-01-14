@@ -43,6 +43,7 @@ jobs:
               uses: actions/checkout@v2
             - name: Lint LaTeX document
               uses: ChiefGokhlayeh/textidote-action@v4
+              id: lint
               with:
                   root_file: main.tex
 
@@ -59,6 +60,9 @@ jobs:
               with:
                   name: textidote_report
                   path: report.html
+            - name: Throw error if linter warnings exist
+              if: ${{ steps.lint.outputs.num_warnings != 0 }}
+              run: 'echo "::error ${{ steps.lint.inputs.root_file }}::num_warnings: ${{ steps.lint.outputs.num_warnings }}"; exit 1;'
 ```
 
 ### Spell Check

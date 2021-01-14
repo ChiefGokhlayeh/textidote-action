@@ -89,9 +89,33 @@ jobs:
 </p>
 </details>
 
+### Ignoring False-Positives
+
+If you're struggling with false-positives, you can disable certain rules using [TeXtidote's `--ignore`](https://github.com/sylvainhalle/textidote#ignoring-rules) option.
+
+<details><summary>Example: Ignoring rules sh:001 and sh:d:001</summary>
+<p>
+
+```yaml
+name: Lint document with some exemptions
+on: [push]
+jobs:
+    lint_latex_with_some_exemptions:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: ChiefGokhlayeh/textidote-action@v4
+              with:
+                  root_file: main.tex
+                  args: --ignore sh:001,sh:d:001
+```
+
+</p>
+</details>
+
 ### More Options
 
-Please refer to the official [TeXtidote readme](https://github.com/sylvainhalle/textidote/blob/master/Readme.md) for more options. Use [`args`](#args) to add custom options.
+Please refer to the official [TeXtidote readme](https://github.com/sylvainhalle/textidote/blob/master/Readme.md) for more options. Use [`args`](#args) to add custom options. For long lists of additional arguments consider using a [`.textidote`](https://github.com/sylvainhalle/textidote#using-a-configuration-file) configuration file.
 
 ## Docker Hub
 

@@ -1,5 +1,7 @@
 # TeXtidote Action [![self-check](https://github.com/ChiefGokhlayeh/textidote-action/workflows/self-check/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Aself-check) [![push-image](https://github.com/ChiefGokhlayeh/textidote-action/workflows/push-image/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Apush-image)
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ChiefGokhlayeh/textidote-action)
+
 GitHub Action to lint, spell- and grammar-check LaTeX documents using [TeXtidote](https://github.com/sylvainhalle/textidote).
 
 ## Inputs

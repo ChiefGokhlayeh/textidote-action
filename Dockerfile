@@ -9,7 +9,7 @@ LABEL vcs-type="git"
 
 ARG TEXTIDOTE_MAINTAINER=sylvainhalle
 ARG TEXTIDOTE_REPO=textidote
-ARG TEXTIDOTE_VERSION=v0.8.1
+ARG TEXTIDOTE_VERSION=v0.8.2
 
 RUN dnf install -y --setopt=install_weak_deps=False \
     bash \

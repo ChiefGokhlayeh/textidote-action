@@ -3,6 +3,7 @@
 [![Test on Documents](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/test.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/test.yml)
 [![Code Quality](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/quality-check.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/quality-check.yml)
 [![Push Image](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/push-image.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/push-image.yml)
+[![Version Tag](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/versioning.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/versioning.yml)
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ChiefGokhlayeh/textidote-action)
 

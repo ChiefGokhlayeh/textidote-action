@@ -1,4 +1,8 @@
-# TeXtidote Action [![self-check](https://github.com/ChiefGokhlayeh/textidote-action/workflows/self-check/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Aself-check) [![push-image](https://github.com/ChiefGokhlayeh/textidote-action/workflows/push-image/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions?query=workflow%3Apush-image)
+# TeXtidote Action
+
+[![Test on Documents](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/test.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/test.yml)
+[![Code Quality](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/quality-check.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/quality-check.yml)
+[![Push Image](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/push-image.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/push-image.yml)
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ChiefGokhlayeh/textidote-action)
 

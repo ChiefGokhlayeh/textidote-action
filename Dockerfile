@@ -3,7 +3,7 @@ FROM fedora:34
 LABEL name="textidote-action"
 LABEL summary="TeXtidote LaTeX linter, spell- and grammar checker"
 LABEL description="Part of GitHub Action textidote-action, used to lint, spell- and grammar-check LaTeX documents using TeXtidote."
-LABEL version="v5.0"
+LABEL version="v5.0.0"
 LABEL url="https://github.com/ChiefGokhlayeh/textidote-action"
 LABEL vcs-type="git"
 

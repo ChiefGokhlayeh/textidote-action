@@ -1,4 +1,4 @@
-FROM fedora:33
+FROM fedora:34
 
 LABEL name="textidote-action"
 LABEL summary="TeXtidote LaTeX linter, spell- and grammar checker"

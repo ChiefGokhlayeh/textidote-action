@@ -1,11 +1,11 @@
 # TeXtidote Action
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ChiefGokhlayeh/textidote-action)
+
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ChiefGokhlayeh/textidote-action/main.svg)](https://results.pre-commit.ci/latest/github/ChiefGokhlayeh/textidote-action/main)
 [![Test on Documents](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/test.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/test.yml)
-[![Code Quality](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/quality-check.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/quality-check.yml)
 [![Push Image](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/push-image.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/push-image.yml)
 [![Version Tag](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/versioning.yml/badge.svg)](https://github.com/ChiefGokhlayeh/textidote-action/actions/workflows/versioning.yml)
-
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ChiefGokhlayeh/textidote-action)
 
 GitHub Action to lint, spell- and grammar-check LaTeX documents using [TeXtidote](https://github.com/sylvainhalle/textidote).
 

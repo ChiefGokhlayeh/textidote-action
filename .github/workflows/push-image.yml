@@ -62,7 +62,7 @@ jobs:
             - name: Image digest
               run: echo ${{ steps.docker_build.outputs.digest }}
             - name: Checkout Git repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - name: Update Docker Hub description
               uses: peter-evans/dockerhub-description@v2
               with:

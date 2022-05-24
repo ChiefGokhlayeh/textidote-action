@@ -44,9 +44,9 @@ jobs:
                   root_file: fine.tex
                   working_directory: test/
                   args: --check en
-                  threshold_error: 1 # by default the word 'linter' will be unknown
-            - name: Assert num_warnings == 1
-              if: ${{ steps.fine_spell_check.outputs.num_warnings != 1 }}
+                  threshold_error: 0
+            - name: Assert num_warnings == 0
+              if: ${{ steps.fine_spell_check.outputs.num_warnings != 0 }}
               run: 'echo "::error file=test/fine.tex::num_warnings: ${{ steps.fine_spell_check.outputs.num_warnings }}"; exit 1;'
             - name: Lint and spell-check fine.tex
               id: fine_spell_check_w_dict

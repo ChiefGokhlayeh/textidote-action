@@ -37,7 +37,7 @@ jobs:
                       ${{ runner.os }}-
             - name: Build and push unstable
               id: docker_build
-              uses: docker/build-push-action@v3
+              uses: docker/build-push-action@v4
               with:
                   cache-from: type=local,src=/tmp/.buildx-cache
                   cache-to: type=local,dest=/tmp/.buildx-cache
@@ -50,7 +50,7 @@ jobs:
               run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
             - name: Build and push release
               if: ${{ github.event_name == 'release' }}
-              uses: docker/build-push-action@v3
+              uses: docker/build-push-action@v4
               with:
                   cache-from: type=local,src=/tmp/.buildx-cache
                   cache-to: type=local,dest=/tmp/.buildx-cache

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-: error MSG
+: error MSG CODE
 error() {
     echo "::error ::$1"
-    exit 1
+    exit "${2:-1}"
 }
 
 root_file="$1"
@@ -50,6 +50,5 @@ if [[ "$num_warnings" -lt 0 ]]; then
 fi
 
 if [[ "$threshold_error" > -1 ]] && [[ "$threshold_error" < "$num_warnings" ]]; then
-    error "Linter warnings above error threshold ($num_warnings > $threshold_error)!"
-    exit "$num_warnings"
+    error "Linter warnings above error threshold ($num_warnings > $threshold_error)!" "$num_warnings"
 fi

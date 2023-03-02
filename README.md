@@ -74,7 +74,7 @@ jobs:
 
 ### Spell Check
 
-TeXtidote is able to perform spell- and grammar-checking using [Language Tool](https://languagetool.org/). To activate it for CI build, add option `--check <language>` to [`args`](#args), where `<language>` is any language code supported by Language Tool (examples: `en` - English, `de` - German, `es` - Spanish). Custom dictionaries can be added via option `--dict <path-to-dict-file-in-repo>`.
+TeXtidote is able to perform spell- and grammar-checking using [LanguageTool](https://languagetool.org/). To activate it for CI build, add option `--check <language>` to [`args`](#args), where `<language>` is any language code supported by LanguageTool (examples: `en` - English, `de` - German, `es` - Spanish). Custom dictionaries can be added via option `--dict <path-to-dict-file-in-repo>`.
 
 <details><summary>Example: Using English spell check & dictionary</summary>
 <p>
@@ -122,7 +122,7 @@ jobs:
 
 ### More Options
 
-Please refer to the official [TeXtidote readme](https://github.com/sylvainhalle/textidote/blob/master/Readme.md) for more options. Use [`args`](#args) to add custom options. For long lists of additional arguments consider using a [`.textidote`](https://github.com/sylvainhalle/textidote#using-a-configuration-file) configuration file.
+Please refer to the official [TeXtidote README](https://github.com/sylvainhalle/textidote/blob/master/Readme.md) for more options. Use [`args`](#args) to add custom options. For long lists of additional arguments consider using a [`.textidote`](https://github.com/sylvainhalle/textidote#using-a-configuration-file) configuration file.
 
 ## Docker Hub
 
@@ -130,11 +130,15 @@ The Docker image created for this action is reusable as a general TeXtidote cont
 
 ## Contributing
 
-Please raise an issue if you encounter any troubles related to this action. Pull requests are always welcome. This is a hobby project afterall.
+Please raise an issue if you encounter any troubles related to this action. Pull requests are always welcome. This is a hobby project after all.
 
 Contributors in alphabetical order:
 
 -   Andreas Baulig
+
+## Alternatives
+
+If you want continuous spell and grammar checking as you type, I recommend the excellent [LTeX Language Server](https://valentjn.github.io/ltex/), also available as [VS Code extension](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex). LTeX has a greater understanding of LaTeX commands and a more intuitive mechanism of adding new unknown commands. TeXtidote may then be used like a linter in the classical sense.
 
 ## License
 

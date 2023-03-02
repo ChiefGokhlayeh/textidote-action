@@ -43,7 +43,7 @@ fi
 
 num_warnings="$( (echo "$stderr" | grep -Po 'Found \K[0-9]* warning\(s\)' | grep -o '[0-9]*') || echo "-1")"
 
-echo "::set-output name=num_warnings::$num_warnings"
+echo "num_warnings=$num_warnings" >>"$GITHUB_OUTPUT"
 
 if [[ "$num_warnings" -lt 0 ]]; then
     error "$(printf 'Unable to parse warnings from TeXtidote stderr! See what was returned below:\n%s' "$stderr")"

@@ -25,7 +25,7 @@ outputs:
         description: The number of warnings returned by TeXtidote.
 runs:
     using: docker
-    image: Dockerfile
+    image: gokhlayeh/textidote:latest
     args:
         - ${{ inputs.root_file }}
         - ${{ inputs.working_directory }}

@@ -10,7 +10,7 @@ jobs:
               uses: actions/checkout@v3
             - name: Lint fine.tex
               id: fine
-              uses: ./
+              uses: ./localAction
               with:
                   root_file: fine.tex
                   working_directory: test/
@@ -20,7 +20,7 @@ jobs:
               run: 'echo "::error file=test/fine.tex::num_warnings: ${{ steps.fine.outputs.num_warnings }}"; exit 1;'
             - name: Lint bad.tex with no threshold set
               id: bad_no_threshold
-              uses: ./
+              uses: ./localAction
               with:
                   root_file: bad.tex
                   working_directory: test/
@@ -29,7 +29,7 @@ jobs:
               run: 'echo "::error file=test/bad.tex::num_warnings: ${{ steps.bad_no_threshold.outputs.num_warnings }}"; exit 1;'
             - name: Lint bad.tex with threshold set to known warnings
               id: bad_known_threshold
-              uses: ./
+              uses: ./localAction
               with:
                   root_file: bad.tex
                   working_directory: test/
@@ -39,7 +39,7 @@ jobs:
               run: 'echo "::error file=test/bad.tex::num_warnings: ${{ steps.bad_known_threshold.outputs.num_warnings }}"; exit 1;'
             - name: Lint and spell-check fine.tex without dict
               id: fine_spell_check_wo_dict
-              uses: ./
+              uses: ./localAction
               with:
                   root_file: fine.tex
                   working_directory: test/
@@ -50,7 +50,7 @@ jobs:
               run: 'echo "::error file=test/fine.tex::num_warnings: ${{ steps.fine_spell_check_wo_dict.outputs.num_warnings }}"; exit 1;'
             - name: Lint and spell-check fine.tex with dict
               id: fine_spell_check_w_dict
-              uses: ./
+              uses: ./localAction
               with:
                   root_file: fine.tex
                   working_directory: test/

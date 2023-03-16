@@ -47,7 +47,7 @@ jobs:
             - name: Determine release tag name
               if: ${{ github.event_name == 'release' }}
               id: vars
-              run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+              run: echo "tag=${GITHUB_REF:10}" >>"$GITHUB_OUTPUT"
             - name: Build and push release
               if: ${{ github.event_name == 'release' }}
               uses: docker/build-push-action@v4
@@ -57,7 +57,7 @@ jobs:
                   platforms: ${{ env.buildx_platforms }}
                   push: true
                   tags: |
-                      ${{ secrets.DOCKERHUB_USERNAME }}/textidote:${{steps.vars.outputs.tag}},
+                      ${{ secrets.DOCKERHUB_USERNAME }}/textidote:${{ steps.vars.outputs.tag }},
                       ${{ secrets.DOCKERHUB_USERNAME }}/textidote:latest
             - name: Image digest
               run: echo ${{ steps.docker_build.outputs.digest }}

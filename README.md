@@ -130,11 +130,7 @@ The Docker image created for this action is reusable as a general TeXtidote cont
 
 ## Contributing
 
-Please raise an issue if you encounter any troubles related to this action. Pull requests are always welcome. This is a hobby project after all.
-
-Contributors in alphabetical order:
-
--   Andreas Baulig
+Please raise an issue if you encounter any troubles related to this action. Pull requests are always welcome. Remember, this is a hobby project.
 
 ## Alternatives
 
